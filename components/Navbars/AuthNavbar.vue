@@ -1,0 +1,120 @@
+<template>
+  <nav
+    class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+  >
+    <div
+      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+    >
+      <div
+        class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+      >
+        <router-link
+          class="text-white text-md font-bold leading-relaxed mr-4 py-2 uppercase flex items-center gap-1"
+          to="/"
+        >
+          <font-awesome
+            :icon="['fab', 'react']"
+            class="text-primary text-lg font-bold"
+          />
+          <h1>
+            {{ nombre1 }} <b class="text-primary">{{ nombre2 }}</b>
+          </h1>
+        </router-link>
+        <button
+          id="aqui"
+          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          type="button"
+          v-on:click="setNavbarOpen"
+        >
+          <font-awesome :icon="['fas', 'bars']" class="text-white" />
+        </button>
+      </div>
+      <div
+        class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none"
+        :class="[navbarOpen ? 'block rounded shadow-lg' : 'hidden']"
+        id="example-navbar-warning"
+      >
+        <!--         <ul class="flex flex-col lg:flex-row list-none mr-auto">
+          <li class="flex items-center">
+            <a
+              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-auth-navbar"
+            >
+              <font-awesome
+                :icon="['far','file-lines']"
+                class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"/>
+              Docs
+            </a>
+          </li>
+        </ul> -->
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <li class="flex items-center">
+            <!-- <PagesDropdown /> -->
+          </li>
+          <li
+            v-for="(client, index) in clients"
+            :key="index"
+            class="flex items-center"
+          >
+            <a
+              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              :href="client.link"
+            >
+              <font-awesome
+                :icon="[client.logo[0], client.logo[1]]"
+                class="lg:text-blueGray-200 text-blueGray-400 text-lg leading-lg"
+              />
+              <span class="lg:hidden inline-block ml-2">{{ client.name }}</span>
+            </a>
+          </li>
+
+          <li class="flex items-center">
+            <button
+              class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+              type="button"
+            >
+            <NuxtLink :to="'/'">
+              <font-awesome
+                :icon="['fas', 'house']"
+                class=""
+              />
+            </NuxtLink>
+              Inicio
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+<script setup lang="ts">
+import PagesDropdown from "@/components/Dropdowns/PagesDropdown.vue";
+
+const nombre1 = import.meta.env.VITE_NOMBRE_1;
+const nombre2 = import.meta.env.VITE_NOMBRE_2;
+
+const navbarOpen = ref(false);
+
+const setNavbarOpen = () => {
+  navbarOpen.value = !navbarOpen.value;
+};
+
+const clients = ref([
+  {
+    name: "GitHub",
+    logo: ["fab", "github"],
+    link: "https://github.com/David-Ostos",
+  },
+  {
+    name: "Linkedin",
+    logo: ["fab", "linkedin"],
+    link: "https://www.linkedin.com/in/david-ostos/",
+  },
+  {
+    name: "UIdeck",
+    logo: ["fab", "whatsapp"],
+    link: "https://wa.link/rzg8sd",
+  },
+]);
+</script>
+<style scoped></style>
