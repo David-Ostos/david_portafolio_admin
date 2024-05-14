@@ -1,7 +1,7 @@
 <template>
   <div>
     <a
-      class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+      class="dark:lg:text-white hover:text-primary dark:hover:text-primary text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
       href="#pablo"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
@@ -84,27 +84,23 @@
     </div>
   </div>
 </template>
-<script>
-import { createPopper } from "@popperjs/core";
+<script setup lang="ts">
+import {createPopper} from "@popperjs/core";
 
-export default {
-  data() {
-    return {
-      dropdownPopoverShow: false,
-    };
-  },
-  methods: {
-    toggleDropdown: function (event) {
-      event.preventDefault();
-      if (this.dropdownPopoverShow) {
-        this.dropdownPopoverShow = false;
-      } else {
-        this.dropdownPopoverShow = true;
-        createPopper(this.$refs.btnDropdownRef, this.$refs.popoverDropdownRef, {
-          placement: "bottom-start",
-        });
-      }
-    },
-  },
-};
+const btnDropdownRef = ref();
+const popoverDropdownRef = ref();
+
+const dropdownPopoverShow = ref(false);
+
+function toggleDropdown(event: any) {
+  event.preventDefault();
+  if (dropdownPopoverShow.value) {
+    dropdownPopoverShow.value = false;
+  } else {
+    dropdownPopoverShow.value = true;
+    createPopper(btnDropdownRef.value, popoverDropdownRef.value, {
+      placement: "bottom-start",
+    });
+  }
+}
 </script>

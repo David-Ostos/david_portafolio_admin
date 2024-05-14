@@ -9,7 +9,7 @@
         class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
       >
         <router-link
-          class="text-white text-md font-bold leading-relaxed mr-4 py-2 uppercase flex items-center gap-1"
+          class="text-text-blueGray-700 dark:text-white text-md font-bold leading-relaxed mr-4 py-2 uppercase flex items-center gap-1"
           to="/"
         >
           <font-awesome
@@ -55,12 +55,12 @@
             <span 
               v-if="colorMode.preference === 'light'"
               @click="colorMode.preference = 'dark'"
-              class="dark:lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+              class="dark:lg:text-white text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
               <font-awesome icon="moon"
                 class="dark:lg:text-blueGray-200 dark:text-blueGray-400 text-lg leading-lg" />
             </span>  
             <span 
-              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              class="lg:text-white text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
               v-if="colorMode.preference === 'dark'"
               @click="colorMode.preference = 'light'"
             >
@@ -83,7 +83,7 @@
             >
               <font-awesome
                 :icon="[client.logo[0], client.logo[1]]"
-                class="lg:text-blueGray-200 text-blueGray-400 text-lg leading-lg"
+                class=" dark:text-white text-blueGray-700 text-lg leading-lg"
               />
               <span class="lg:hidden inline-block ml-2">{{ client.name }}</span>
             </a>
