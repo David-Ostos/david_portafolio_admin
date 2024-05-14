@@ -21,7 +21,7 @@
 
               <ul class="flex flex-wrap items-center">
                 <li>
-                  <ButtonPrimary link="/" contenido="Sobre Mí"/>
+                  <ButtonPrimary link="/profile" contenido="Sobre Mí"/>
                 </li>
               </ul>
              <!--  <div class="clients pt-16">
@@ -48,11 +48,13 @@
           <div class="hidden px-4 lg:block lg:w-1/12"></div>
           <div class="w-full px-4 lg:w-6/12">
             <div class="lg:ml-auto lg:text-right">
-              <div class="relative z-10 inline-block pt-11 lg:pt-0">
-                <img
-                  src="https://cdn.tailgrids.com/2.0/image/marketing/images/hero/hero-image-01.png"
+              <div class="relative z-10 inline-block pt-11 lg:pt-0 rounded-s-full">
+                <NuxtImg 
+                  format="webp"
+                  loading="lazy"
+                  :src="yo"
                   alt="hero"
-                  class="max-w-full lg:ml-auto -scale-x-100"
+                  class=" lg:ml-auto -scale-x-100 rounded-xl rounded-ss-[6rem] max-w-[500px]"
                 />
                 <span class="absolute -left-8 -bottom-8 z-[-1]">
                   <svg
@@ -98,7 +100,7 @@
 </template>
 
 <script lang="ts" setup>
-import patternVue from "@/assets/img/pattern_vue.png";
+import yo from "/img/yo.jpeg";
 
 const clients = ref([
   {

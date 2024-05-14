@@ -123,8 +123,9 @@
               <div class=" py-10 border-t border-blueGray-200 text-center">
                 <div class="flex flex-wrap justify-center">
                   <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                      {{  data.descripcion }}
+                    <p v-for="descripcion, index in data.descripcion" class="mb-4 text-lg leading-relaxed text-blueGray-700"
+                    :key="index">
+                      {{ descripcion }}
                     </p>
                     <!-- <a
                       href="javascript:void(0)"
@@ -153,7 +154,18 @@ const data = ref({
   apellido: 'Ostos',
   direccion: 'Valencia, Venezuela.',
   ocupacion: 'Developer Full Stack',
-  descripcion: 'Desarrollador Full Stack enfocado en soluciones, con experiencia en JavaScript. Realizo PWA y apps híbridas con Capacitor.js, y manejo de Apache y Linux Server. Conocimientos en AWS, NestJS, Vue.js, Docker y TypeORM. Resuelvo desafíos técnicos con creatividad y eficiencia.'
+  descripcion: [
+    "Como Desarrollador Full Stack apasionado por la tecnología y con un enfoque responsable, me especializo en ofrecer soluciones innovadoras utilizando JavaScript y su ecosistema. Mi experiencia abarca desde el desarrollo de Progressive Web Apps (PWA) y aplicaciones híbridas con Capacitor.js, hasta la creación de aplicaciones móviles, de escritorio y web que responden a las necesidades actuales del mercado.",
+    "Mi dominio en NestJS y Vue.js me permite construir arquitecturas robustas y escalables, mientras que mi habilidad para trabajar con TypeORM dentro del entorno de NestJS me capacita para diseñar y gestionar bases de datos eficientes, establecer relaciones complejas y desarrollar APIs REST con autenticación y autorización avanzadas, adaptando las soluciones según los roles y accesos de los usuarios.",
+    "En el ámbito de la infraestructura, poseo conocimientos sólidos en Apache, despliegue de proyectos en diversos dominios y la configuración de servidores con Ubuntu Server. Además, tengo una comprensión básica de servicios en la nube como AWS, lo que me permite implementar y gestionar aplicaciones en entornos cloud con confianza.",
+    "La contenerización con Docker es otra de mis áreas de expertise, permitiéndome crear entornos de desarrollo reproducibles y manejar despliegues consistentes, lo que asegura una integración y entrega continuas eficientes."
+
+  ]
+  
+
+
+
+  
 })
 
 </script>

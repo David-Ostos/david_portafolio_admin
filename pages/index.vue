@@ -29,7 +29,7 @@
             class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32"
           >
             <div
-              class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
+              class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
             >
               <img
                 alt="..."
@@ -49,12 +49,10 @@
                   ></polygon>
                 </svg>
                 <h4 class="text-xl font-bold text-white">
-                  Great for your awesome project
+                  Desarrollemos juntos tu proyecto 
                 </h4>
                 <p class="text-md font-light mt-2 text-white">
-                  Putting together a page has never been easier than matching
-                  together pre-made components. From landing pages presentation
-                  to login areas, you can easily customise and built your pages.
+                  Transformamos tus ideas en realidad digital con una experiencia de usuario excepcional, backend robusto y gestión segura de datos. Únete a nosotros.
                 </p>
               </blockquote>
             </div>
