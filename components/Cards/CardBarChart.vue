@@ -119,7 +119,7 @@ export default {
         },
       };
       let ctx = document.getElementById("bar-chart").getContext("2d");
-      window.myBar = new Chart(ctx, config);
+      // window.myBar = new Chart(ctx, config);
     });
   },
 };

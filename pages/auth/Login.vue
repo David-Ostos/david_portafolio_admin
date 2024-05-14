@@ -101,16 +101,11 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 import github from "@/assets/img/github.svg";
 import google from "@/assets/img/google.svg";
 
-export default {
-  data() {
-    return {
-      github,
-      google,
-    };
-  },
-};
+definePageMeta({
+  layout: "auth"
+})
 </script>

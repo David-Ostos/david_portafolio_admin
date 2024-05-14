@@ -9,12 +9,11 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 import MapExample from "@/components/Maps/MapExample.vue";
 
-export default {
-  components: {
-    MapExample,
-  },
-};
+definePageMeta({
+  layout: "admin"
+})
+
 </script>

@@ -1,164 +1,81 @@
 <template>
-  <footer class="relative bg-blueGray-200 pt-8 pb-6">
-    <div
-      class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-      style="transform: translateZ(0);"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-blueGray-200 fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
-      </svg>
-    </div>
+  <footer
+    class="pb-6"
+    :class="[
+      absolute ? 'absolute w-full bottom-0 bg-blueGray-800' : 'relative',
+    ]"
+  >
     <div class="container mx-auto px-4">
-      <div class="flex flex-wrap text-center lg:text-left">
-        <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-          <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-            Find us on any of these platforms, we respond 1-2 business days.
-          </h5>
-          <div class="mt-6 lg:mb-0 mb-6">
-            <button
-              class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <font-awesome :icon="['fab', 'twitter']" class=""/>
-            </button>
-            <button
-              class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <font-awesome :icon="['fab', 'facebook']" class=""/>
-            </button>
-            <button
-              class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <font-awesome :icon="['fab', 'dribbble']" />
-            </button>
-            <button
-              class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <font-awesome :icon="['fab', 'github']" class="fab fa-github"/>
-            </button>
-          </div>
-        </div>
-        <div class="w-full lg:w-6/12 px-4">
-          <div class="flex flex-wrap items-top mb-6">
-            <div class="w-full lg:w-4/12 px-4 ml-auto">
-              <span
-                class="block uppercase text-blueGray-500 text-sm font-semibold mb-2"
-              >
-                Useful Links
-              </span>
-              <ul class="list-unstyled">
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Github
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Free Products
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-full lg:w-4/12 px-4">
-              <span
-                class="block uppercase text-blueGray-500 text-sm font-semibold mb-2"
-              >
-                Other Resources
-              </span>
-              <ul class="list-unstyled">
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    MIT License
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href=""
-                  >
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="my-6 border-blueGray-300" />
+      <hr class="mb-6 border-b-1 border-blueGray-600" />
       <div
         class="flex flex-wrap items-center md:justify-between justify-center"
       >
-        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-          <div class="text-sm text-blueGray-500 font-semibold py-1">
-            Copyright © {{ date }} David <b class="text-primary">Ostos</b>.
+        <div class="w-full md:w-4/12 px-4">
+          <div
+            class="text-sm text-blueGray-500 font-semibold py-1 text-center md:text-left"
+          >
+            Copyright © {{ date }}
+            <a
+              href="https://www.creative-tim.com?ref=vn-footer-small"
+              class="text-white hover:text-blueGray-300 text-sm font-semibold py-1"
+            >
+              Creative Tim
+            </a>
           </div>
+        </div>
+        <div class="w-full md:w-8/12 px-4">
+          <ul class="flex flex-wrap list-none md:justify-end justify-center">
+            <li>
+              <a
+                href="https://www.creative-tim.com?ref=vn-footer-small"
+                class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
+              >
+                Creative Tim
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.creative-tim.com/presentation?ref=vn-footer-small"
+                class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://blog.creative-tim.com?ref=vn-footer-small"
+                class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/creativetimofficial/vue-notus/blob/main/LICENSE.md?ref=vn-footer-small"
+                class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
+              >
+                MIT License
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
 <script>
 export default {
   data() {
     return {
       date: new Date().getFullYear(),
     };
+  },
+  props: {
+    absolute: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>

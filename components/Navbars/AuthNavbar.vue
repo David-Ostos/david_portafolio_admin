@@ -30,7 +30,7 @@
         </button>
       </div>
       <div
-        class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none"
+        class="w-28 lg:flex flex-grow items-center bg-gray-400 lg:bg-opacity-0 lg:shadow-none"
         :class="[navbarOpen ? 'block rounded shadow-lg' : 'hidden']"
         id="example-navbar-warning"
       >
@@ -47,9 +47,30 @@
             </a>
           </li>
         </ul> -->
-        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto ">
           <li class="flex items-center">
-            <!-- <PagesDropdown /> -->
+            <PagesDropdown />
+          </li>
+          <li class="flex items-center">
+            <span 
+              v-if="colorMode.preference === 'light'"
+              @click="colorMode.preference = 'dark'"
+              class="dark:lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+              <font-awesome icon="moon"
+                class="dark:lg:text-blueGray-200 dark:text-blueGray-400 text-lg leading-lg" />
+            </span>  
+            <span 
+              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              v-if="colorMode.preference === 'dark'"
+              @click="colorMode.preference = 'light'"
+            >
+              <font-awesome 
+                :icon="['fas', 'sun']"
+                class="lg:text-blueGray-200 text-blueGray-400 text-lg leading-lg" />
+
+              <span class="lg:hidden inline-block ml-2">Modo</span>
+              
+            </span>
           </li>
           <li
             v-for="(client, index) in clients"
@@ -92,6 +113,10 @@ import PagesDropdown from "@/components/Dropdowns/PagesDropdown.vue";
 
 const nombre1 = import.meta.env.VITE_NOMBRE_1;
 const nombre2 = import.meta.env.VITE_NOMBRE_2;
+
+const colorMode = useColorMode();
+
+
 
 const navbarOpen = ref(false);
 

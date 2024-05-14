@@ -8,12 +8,10 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 import CardTable from "@/components/Cards/CardTable.vue";
 
-export default {
-  components: {
-    CardTable,
-  },
-};
+definePageMeta({
+  layout: "admin"
+})
 </script>
