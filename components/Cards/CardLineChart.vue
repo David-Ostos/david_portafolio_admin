@@ -22,11 +22,12 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
+import Chart from "chart.js/auto";
 
-export default {
-  mounted: function () {
-    this.$nextTick(function () {
+
+  onMounted(function () {
+    nextTick(function () {
       var config = {
         type: "line",
         data: {
@@ -41,14 +42,14 @@ export default {
           ],
           datasets: [
             {
-              label: new Date().getFullYear(),
+              label: new Date().getFullYear().toString(),
               backgroundColor: "#4c51bf",
               borderColor: "#4c51bf",
               data: [65, 78, 66, 44, 56, 67, 75],
               fill: false,
             },
             {
-              label: new Date().getFullYear() - 1,
+              label: (new Date().getFullYear() - 1).toString(),
               fill: false,
               backgroundColor: "#fff",
               borderColor: "#fff",
@@ -128,8 +129,7 @@ export default {
         },
       };
       var ctx = document.getElementById("line-chart").getContext("2d");
-      // window.myLine = new Chart(ctx, config);
+      window.myLine = new Chart(ctx, config);
     });
-  },
-};
+  })
 </script>

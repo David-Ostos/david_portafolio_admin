@@ -92,9 +92,9 @@
             </a>
           </div>
           <div class="w-1/2 text-right">
-            <router-link to="/auth/register" class="text-blueGray-200">
+            <NuxtLink to="/auth/register" class="text-blueGray-200">
               <small>Create new account</small>
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>

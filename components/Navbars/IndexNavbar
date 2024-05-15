@@ -8,7 +8,7 @@
       <div
         class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
       >
-        <router-link
+        <NuxtLink
           class="text-white text-md font-bold leading-relaxed mr-4 py-2 uppercase flex items-center gap-1"
           to="/"
         >
@@ -19,7 +19,7 @@
           <h1>
             {{ nombre1 }} <b class="text-primary">{{ nombre2 }}</b>
           </h1>
-        </router-link>
+        </NuxtLink>
         <button
           id="aqui"
           class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
