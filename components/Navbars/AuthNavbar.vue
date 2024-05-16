@@ -136,7 +136,7 @@ const clients = ref([
     link: "https://www.linkedin.com/in/david-ostos/",
   },
   {
-    name: "UIdeck",
+    name: "Whatsapp",
     logo: ["fab", "whatsapp"],
     link: "https://wa.link/rzg8sd",
   },

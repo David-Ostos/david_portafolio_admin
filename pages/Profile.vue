@@ -120,20 +120,39 @@
                   {{ data. }}
                 </div> -->
               </div>
-              <div class=" py-10 border-t border-blueGray-200 text-center">
+              <div class=" py-10 border-t border-blueGray-200 text-center transition duration-700">
                 <div class="flex flex-wrap justify-center">
-                  <div class="w-full lg:w-9/12 px-4">
+                  <div class="w-full lg:w-9/12 px-4 transition-all ease-in-out duration-300 overflow-hidden "
+                  :style="`max-height: ${heightMax}em`"
+                  >
                     <p v-for="descripcion, index in data.descripcion" class="mb-4 text-lg leading-relaxed text-blueGray-700"
                     :key="index">
                       {{ descripcion }}
                     </p>
-                    <!-- <a
-                      href="javascript:void(0)"
-                      class="font-normal text-emerald-500"
-                    >
-                      Show more
-                    </a> -->
                   </div>
+                  <button
+                    v-if="showMore === true"
+                    @click="
+                      showMore = false,
+                      lineClamp = 'none',
+                      heightMax = 41
+                    "
+                    class="font-normal text-emerald-500"
+                  >
+                    Show more
+                </button>
+                <button
+                    v-else
+                    class="font-normal text-pink-400"
+                    @click="
+                      showMore = true,
+                      lineClamp = 6,
+                      heightMax = 11
+                    "
+
+                  >
+                    Show less
+                </button>
                 </div>
               </div>
             </div>
@@ -148,6 +167,11 @@
 import Navbar from "@/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 import imagen from "@/assets/img/yo.jpeg"
+
+const showMore = ref(true)
+const lineClamp:Ref<6 | 'none'> = ref(6)
+  const heightMax:Ref<11 | 41 > = ref(11)
+
 
 const data = ref({
   nombre: 'David',

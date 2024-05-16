@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   },
   fontawesome: {
     icons: {
-      solid: ['moon', 'sun', 'bars','circle-down', 'map-marker', 'briefcase','house'],
+      solid: ['percent','users','chart-pie','caret-up','sort-down', 'chart-bar','moon', 'sun', 'bars','circle-down', 'map-marker', 'briefcase','house'],
       brands: ['linkedin', 'github', 'whatsapp','square-js', 'react', 'facebook', 'twitter', 'dribbble'],
       regular: ['file-lines']
     }
